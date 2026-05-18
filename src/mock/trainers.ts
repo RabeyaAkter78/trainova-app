@@ -1,0 +1,35 @@
+export const mockTrainers = [
+  {
+    id: '1',
+    name: 'John Doe',
+    specialty: 'Bodybuilding & Strength',
+    rating: 4.9,
+    reviews: 124,
+    image: 'https://images.unsplash.com/photo-1541534741688-6078c65a55de?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+    price: 50,
+    location: 'New York, NY',
+    bio: 'Certified personal trainer with 10+ years of experience helping clients achieve their fitness goals.',
+  },
+  {
+    id: '2',
+    name: 'Jane Smith',
+    specialty: 'Yoga & Wellness',
+    rating: 4.8,
+    reviews: 98,
+    image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+    price: 45,
+    location: 'Los Angeles, CA',
+    bio: 'Dedicated to helping you find balance, strength, and inner peace through yoga.',
+  },
+  {
+    id: '3',
+    name: 'Mike Johnson',
+    specialty: 'HIIT & CrossFit',
+    rating: 4.7,
+    reviews: 85,
+    image: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+    price: 55,
+    location: 'Chicago, IL',
+    bio: 'High energy trainer focused on getting you results fast with high intensity training.',
+  }
+];

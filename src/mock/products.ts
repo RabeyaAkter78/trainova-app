@@ -1,0 +1,35 @@
+export const mockProducts = [
+  {
+    id: '1',
+    name: 'Premium Whey Protein',
+    brand: 'Optimum Nutrition',
+    price: 59.99,
+    rating: 4.8,
+    reviews: 1540,
+    image: 'https://images.unsplash.com/photo-1579722820308-d74e571900a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+    category: 'Supplements',
+    description: 'High-quality whey protein isolate for muscle recovery and growth.',
+  },
+  {
+    id: '2',
+    name: 'Smart Fitness Tracker',
+    brand: 'Fitbit',
+    price: 129.99,
+    rating: 4.6,
+    reviews: 890,
+    image: 'https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+    category: 'Electronics',
+    description: 'Advanced fitness tracker with heart rate monitor and GPS.',
+  },
+  {
+    id: '3',
+    name: 'Adjustable Dumbbells',
+    brand: 'Bowflex',
+    price: 299.99,
+    rating: 4.9,
+    reviews: 2100,
+    image: 'https://images.unsplash.com/photo-1586401100295-7a8096fd231a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+    category: 'Equipment',
+    description: 'Space-saving adjustable dumbbells for home workouts.',
+  }
+];
