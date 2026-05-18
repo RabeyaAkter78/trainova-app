@@ -51,7 +51,11 @@ export default function HomeScreen({ navigation }: any) {
         </View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {mockTrainers.map((trainer) => (
-            <TouchableOpacity key={trainer.id} className="bg-slate-800 p-4 rounded-2xl mr-4 w-60 border border-slate-700">
+            <TouchableOpacity 
+              key={trainer.id} 
+              className="bg-slate-800 p-4 rounded-2xl mr-4 w-60 border border-slate-700"
+              onPress={() => navigation.navigate('TrainerDetails', { trainer })}
+            >
               <Image source={{ uri: trainer.image }} className="w-full h-32 rounded-xl mb-3" />
               <Text className="text-white font-bold text-base">{trainer.name}</Text>
               <Text className="text-slate-400 text-sm">{trainer.specialty}</Text>
@@ -77,7 +81,11 @@ export default function HomeScreen({ navigation }: any) {
         </View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {mockProducts.map((product) => (
-            <TouchableOpacity key={product.id} className="bg-slate-800 p-4 rounded-2xl mr-4 w-48 border border-slate-700">
+            <TouchableOpacity 
+              key={product.id} 
+              className="bg-slate-800 p-4 rounded-2xl mr-4 w-48 border border-slate-700"
+              onPress={() => navigation.navigate('ProductDetails', { product })}
+            >
               <Image source={{ uri: product.image }} className="w-full h-24 rounded-xl mb-3" />
               <Text className="text-white font-bold" numberOfLines={1}>{product.name}</Text>
               <Text className="text-slate-400 text-sm">{product.brand}</Text>

@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/slices/authSlice';
 import * as ImagePicker from 'expo-image-picker';
 
-export default function ProfileScreen() {
+export default function ProfileScreen({ navigation }: any) {
   const dispatch = useDispatch();
   
   // State for Modals
@@ -19,7 +19,6 @@ export default function ProfileScreen() {
   const [image, setImage] = useState('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80');
 
   const pickImage = async () => {
-    // No permissions request is necessary for launching the image library
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ['images'],
       allowsEditing: true,
@@ -106,6 +105,17 @@ export default function ProfileScreen() {
           <View className="flex-row items-center">
             <Ionicons name="lock-closed-outline" size={20} color="#64748b" />
             <Text className="text-white ml-3 font-medium">Change Password</Text>
+          </View>
+          <Ionicons name="chevron-forward" size={20} color="#64748b" />
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+          className="flex-row justify-between items-center p-4 border-b border-slate-700"
+          onPress={() => navigation.navigate('Orders')}
+        >
+          <View className="flex-row items-center">
+            <Ionicons name="receipt-outline" size={20} color="#64748b" />
+            <Text className="text-white ml-3 font-medium">My Orders</Text>
           </View>
           <Ionicons name="chevron-forward" size={20} color="#64748b" />
         </TouchableOpacity>
