@@ -3,6 +3,7 @@ import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { mockTrainers } from '../../mock/trainers';
 import { mockProducts } from '../../mock/products';
+import { mockGyms } from '../../mock/gyms';
 
 export default function HomeScreen({ navigation }: any) {
   return (
@@ -45,7 +46,7 @@ export default function HomeScreen({ navigation }: any) {
       <View className="mb-6">
         <View className="flex-row justify-between items-center mb-3">
           <Text className="text-white text-lg font-bold">Recommended Trainers</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Main', { screen: 'Trainers' })}>
             <Text className="text-emerald-500 text-sm font-medium">See All</Text>
           </TouchableOpacity>
         </View>
@@ -71,11 +72,41 @@ export default function HomeScreen({ navigation }: any) {
         </ScrollView>
       </View>
 
+      {/* Top Rated Gyms */}
+      <View className="mb-6">
+        <View className="flex-row justify-between items-center mb-3">
+          <Text className="text-white text-lg font-bold">Top Rated Gyms Near You</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Main', { screen: 'Gyms' })}>
+            <Text className="text-emerald-500 text-sm font-medium">See All</Text>
+          </TouchableOpacity>
+        </View>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          {mockGyms.map((gym) => (
+            <TouchableOpacity 
+              key={gym.id} 
+              className="bg-slate-800 p-4 rounded-2xl mr-4 w-64 border border-slate-700"
+              onPress={() => navigation.navigate('GymDetails', { gym })}
+            >
+              <Image source={{ uri: gym.image }} className="w-full h-32 rounded-xl mb-3" />
+              <Text className="text-white font-bold text-base">{gym.name}</Text>
+              <Text className="text-slate-400 text-sm">{gym.location}</Text>
+              <View className="flex-row justify-between items-center mt-2">
+                <Text className="text-emerald-500 font-bold">${gym.price}/mo</Text>
+                <View className="flex-row items-center">
+                  <Text className="text-yellow-400 text-sm">⭐</Text>
+                  <Text className="text-slate-400 text-sm ml-1">{gym.rating}</Text>
+                </View>
+              </View>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+      </View>
+
       {/* Trending Products */}
       <View className="mb-8">
         <View className="flex-row justify-between items-center mb-3">
           <Text className="text-white text-lg font-bold">Trending Products</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Main', { screen: 'Products' })}>
             <Text className="text-emerald-500 text-sm font-medium">See All</Text>
           </TouchableOpacity>
         </View>
@@ -100,6 +131,7 @@ export default function HomeScreen({ navigation }: any) {
           ))}
         </ScrollView>
       </View>
+      <View className="h-10" />
     </ScrollView>
   );
 }

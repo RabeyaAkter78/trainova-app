@@ -10,6 +10,8 @@ import MessageScreen from '../screens/messages/MessageScreen';
 import CartScreen from '../screens/products/CartScreen';
 import CheckoutScreen from '../screens/products/CheckoutScreen';
 import OrdersScreen from '../screens/profile/OrdersScreen';
+import GymDetailsScreen from '../screens/gyms/GymDetailsScreen';
+import SubscriptionsScreen from '../screens/profile/SubscriptionsScreen';
 import { RootState } from '../redux/store';
 
 const Stack = createNativeStackNavigator();
@@ -29,6 +31,8 @@ export default function Navigation() {
           <Stack.Screen name="Cart" component={CartScreen} />
           <Stack.Screen name="Checkout" component={CheckoutScreen} />
           <Stack.Screen name="Orders" component={OrdersScreen} />
+          <Stack.Screen name="GymDetails" component={GymDetailsScreen} />
+          <Stack.Screen name="Subscriptions" component={SubscriptionsScreen} />
         </>
       ) : (
         <Stack.Screen name="AuthStack" component={AuthNavigator} />

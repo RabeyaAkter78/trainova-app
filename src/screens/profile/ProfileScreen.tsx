@@ -121,6 +121,17 @@ export default function ProfileScreen({ navigation }: any) {
         </TouchableOpacity>
 
         <TouchableOpacity 
+          className="flex-row justify-between items-center p-4 border-b border-slate-700"
+          onPress={() => navigation.navigate('Subscriptions')}
+        >
+          <View className="flex-row items-center">
+            <Ionicons name="card-outline" size={20} color="#64748b" />
+            <Text className="text-white ml-3 font-medium">My Subscriptions</Text>
+          </View>
+          <Ionicons name="chevron-forward" size={20} color="#64748b" />
+        </TouchableOpacity>
+
+        <TouchableOpacity 
           className="flex-row justify-between items-center p-4"
           onPress={() => dispatch(logout())}
         >
@@ -164,6 +175,7 @@ export default function ProfileScreen({ navigation }: any) {
                   value={email} 
                   onChangeText={setEmail} 
                   className="bg-slate-800 text-white p-4 rounded-xl border border-slate-700 focus:border-emerald-500" 
+                  keyboardType="email-address"
                 />
               </View>
               <View>
@@ -172,6 +184,7 @@ export default function ProfileScreen({ navigation }: any) {
                   value={phone} 
                   onChangeText={setPhone} 
                   className="bg-slate-800 text-white p-4 rounded-xl border border-slate-700 focus:border-emerald-500" 
+                  keyboardType="phone-pad"
                 />
               </View>
             </View>

@@ -1,0 +1,32 @@
+export const mockGyms = [
+  {
+    id: 1,
+    name: 'Apex Fitness Hub',
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+    rating: 4.8,
+    reviews: 120,
+    location: 'Downtown, Cityville',
+    price: 50,
+    amenities: ['Pool', 'Sauna', '24/7'],
+  },
+  {
+    id: 2,
+    name: 'Iron Temple Gym',
+    image: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+    rating: 4.9,
+    reviews: 250,
+    location: 'North Suburbs',
+    price: 40,
+    amenities: ['Free Weights', 'Crossfit'],
+  },
+  {
+    id: 3,
+    name: 'Serene Yoga & Wellness',
+    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+    rating: 4.7,
+    reviews: 85,
+    location: 'West End',
+    price: 60,
+    amenities: ['Yoga', 'Massage', 'Juice Bar'],
+  },
+];
