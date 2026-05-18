@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { mockTrainers } from '../../mock/trainers';
 import { mockProducts } from '../../mock/products';
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }: any) {
   return (
     <ScrollView className="flex-1 bg-slate-900 pt-12 px-4">
       {/* Greeting Section */}
@@ -12,9 +13,18 @@ export default function HomeScreen() {
           <Text className="text-slate-400 text-sm">Welcome back,</Text>
           <Text className="text-white text-2xl font-bold">Alex Smith</Text>
         </View>
-        <TouchableOpacity className="w-12 h-12 bg-slate-800 rounded-full items-center justify-center border border-slate-700">
-          <Text className="text-white font-bold">AS</Text>
-        </TouchableOpacity>
+        <View className="flex-row items-center">
+          <TouchableOpacity 
+            className="w-10 h-10 bg-slate-800 rounded-full items-center justify-center border border-slate-700 mr-3 relative"
+            onPress={() => navigation.navigate('Notifications')}
+          >
+            <Ionicons name="notifications-outline" size={20} color="white" />
+            <View className="absolute top-2 right-2 w-2 h-2 bg-emerald-500 rounded-full" />
+          </TouchableOpacity>
+          <TouchableOpacity className="w-12 h-12 bg-slate-800 rounded-full items-center justify-center border border-slate-700">
+            <Text className="text-white font-bold">AS</Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       {/* Stats Cards */}
